@@ -1,6 +1,10 @@
 :root {
   --main-radius: 5px;
   --main-padding: 5px;
+  --dark-blue: #153448;
+  --grey-blue: #3C5B6F;
+  --dark-brown: #948979;
+  --light-brown: #DFD0B8;
 }
 
 body {
@@ -24,40 +28,39 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   font-size: 12px;
-  color: #004d40;
   text-align: center;
 }
 
 #about {
-  background: #84ffff;
+  background: var(--grey-blue);
   grid-area: about;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
 }
 
 #project1 {
-  background: #6fffd2;
+  background: var(--light-brown);
   grid-area: content1;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
 }
 
 #project2 {
-  background: #64ffda;
+  background: var(--light-brown);
   grid-area: content2;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
 }
 
 #project3 {
-  background: #73ffba;
+  background: var(--light-brown);
   grid-area: content3;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
 }
 
 footer {
-  background: #1de9b6;
+  background: var(--dark-brown);
   grid-area: footer;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
