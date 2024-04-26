@@ -11,6 +11,7 @@
 }
 
 body {
+  overflow-x: hidden;
   font-family: "Inter", sans-serif;
   min-height: 100vh;
   margin: 0;
@@ -37,6 +38,7 @@ body {
 }
 
 .vertical-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,6 +66,7 @@ p {
 h1 {
   color: var(--white);
   font-weight: bolder;
+  text-decoration-line: underline;
 }
 
 img {
@@ -91,7 +94,19 @@ img {
   align-items: center;
 }
 
+#intro {
+  width: 100%;
+  text-decoration-line: underline;
+  font-size: 1.6rem;
+  color: var(--white);
+  margin: var(--grid-gap);
+  border-radius: var(--main-radius);
+  background-color: var(--dark-blue);
+}
+
 #projects-container {
+  padding-top: var(--grid-gap);
+  padding-bottom: var(--grid-gap);
   flex: 1;
   width: 100%;
   grid-area: projects;
@@ -102,6 +117,7 @@ img {
 }
 
 #projects-container > * {
+  margin: 0;
   background: var(--light-brown);
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
@@ -121,7 +137,13 @@ a {
   font-family: inherit;
   text-decoration: none;
   font-weight: bold;
-  margin: 1rem;
+  margin: 1ch;
+  transition: transform 0.3s ease;
+}
+
+a:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 @media (max-width: 1000px) {
@@ -135,5 +157,17 @@ a {
 
   p {
     font-size: 0.8rem;
+  }
+
+  #projects-container {
+    grid-template-columns: 1fr;
+    grid-auto-rows: repeat(3, 1fr);
+    gap: var(--grid-gap);
+  }
+
+  #intro {
+    font-size: 1rem;
+    text-decoration-line: none;
+    border: 3px groove var(--white);
   }
 }
