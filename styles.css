@@ -1,12 +1,13 @@
 :root {
   --main-radius: 5px;
   --main-padding: 5px;
-  --white: hsla(0, 0%, 100%, 0.75);
+  --white: hsla(0, 0%, 100%, 0.8);
   --dark-blue: hsla(204, 55%, 18%, 0.6);
   --grey-blue: hsla(204, 30%, 34%, 0.6);
   --dark-brown: hsla(36, 11%, 53%, 0.6);
   --light-brown: hsla(37, 38%, 80%, 0.6);
   --black: hsla(0, 0%, 0%, 0.781);
+  --grid-gap: 0.2rem;
 }
 
 body {
@@ -27,11 +28,10 @@ body {
   grid-template-rows: 1.5fr 1.2fr 0.8fr;
   grid-template-areas:
     "about about about"
-    "content1 content2 content3"
+    "projects projects projects"
     "footer footer footer";
-  grid-gap: 0.2rem;
+  grid-gap: var(--grid-gap);
   font-weight: 800;
-  text-transform: uppercase;
   font-size: 12px;
   text-align: center;
 }
@@ -50,9 +50,10 @@ label {
 }
 
 p {
-  border-radius: 13px;
+  border-radius: 3px;
   background-color: var(--white);
   padding: 15px;
+  font-size: 1rem;
   line-height: 3ch;
   color: var(--black);
   max-width: 72ch;
@@ -82,26 +83,30 @@ img {
   justify-content: center;
 }
 
-#project1 {
+#projects {
+  grid-area: projects;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#projects-container {
+  flex: 1;
+  width: 100%;
+  grid-area: projects;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Divide container into three equal columns */
+  grid-auto-rows: 1fr; /* Each row will take up equal space vertically */
+  gap: var(--grid-gap);
+}
+
+#projects-container > * {
   background: var(--light-brown);
-  grid-area: content1;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
 }
 
-#project2 {
-  background: var(--light-brown);
-  grid-area: content2;
-  border-radius: var(--main-radius);
-  padding-top: var(--main-padding);
-}
-
-#project3 {
-  background: var(--light-brown);
-  grid-area: content3;
-  border-radius: var(--main-radius);
-  padding-top: var(--main-padding);
-}
 
 footer {
   background: var(--dark-brown);
@@ -126,5 +131,9 @@ a {
 
   #about {
     flex-direction: column;
+  }
+
+  p {
+    font-size: 0.8rem;
   }
 }
