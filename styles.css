@@ -75,6 +75,24 @@ img {
   max-width: min(890px, 80vw, 80%);
 }
 
+
+a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  display: block;
+  font-family: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 1ch;
+  transition: transform 0.3s ease;
+}
+
+a:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 #about {
   background: var(--grey-blue);
   grid-area: about;
@@ -124,27 +142,61 @@ img {
 }
 
 
-footer {
+#contact {
   background: var(--dark-brown);
   grid-area: footer;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-a {
-  text-align: center;
-  display: block;
-  font-family: inherit;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 1ch;
-  transition: transform 0.3s ease;
+#contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-a:hover {
-  cursor: pointer;
-  transform: scale(1.1);
+#contact-info {
+  border-radius: 3px;
+  background-color: var(--white);
+  padding: 15px;
+  font-size: 1rem;
+  line-height: 3ch;
+  color: var(--black);
+  width: fit-content;
+  height: fit-content;
+  margin: 10px;
 }
+
+#contact-info > a {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  transform: none;
+}
+
+#contact-info > a:hover {
+  background-color: aliceblue;
+}
+
+.icon {
+  box-shadow: none;
+  max-width: 40px;
+  height: auto;
+}
+
+
+.shrek-img {
+  max-height: 70%;
+  width: auto;
+}
+
 
 @media (max-width: 1000px) {
   label {
@@ -169,5 +221,9 @@ a:hover {
     font-size: 1rem;
     text-decoration-line: none;
     border: 3px groove var(--white);
+  }
+
+  #contact-container {
+    flex-direction: column-reverse;
   }
 }
