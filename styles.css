@@ -26,7 +26,7 @@ body {
   display: grid;
   min-height: 150vh;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1.5fr 1.2fr 0.8fr;
+  grid-template-rows: 1fr 1fr 1fr; 
   grid-template-areas:
     "about about about"
     "projects projects projects"
